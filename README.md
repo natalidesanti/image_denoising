@@ -1,17 +1,36 @@
-# A simple example of an image denoising
+# A mini tutorial on Image Denoising Techniques
 
-**Image denoising** is a simple example of an autoencoder, using [MNIST](https://keras.io/api/datasets/mnist/) dataset, inspired into Francois Chollet [tutorial](https://blog.keras.io/building-autoencoders-in-keras.html).
+The goal of **image denoising** is to recover a _clean version_ of an image $x$ from a _noisy observation_ $y$, 
+whith _noise_ $\nu$. 
+Mathematically, this relationship is described by:
+\begin{equation}
+ y = x + \nu
+\end{equation}
+An _image denoiser_ should be able to produce a cleaned version $\hat{x}$ that closely resembles the original clean 
+image $x$, by effectively reducing the noise present in the observed image $y$.
 
+In this tutorial we pass through **traditional** to more **sophisticated** image denoising techniques.
 
-## What is an image denoising?
+I will show how to work with the handwritten digits from [MNIST](https://keras.io/api/datasets/mnist/),
+to include a **Gaussian noise** on their images, and build a series of methods to denoise those images.
 
-An **image denoising** is an algorithm that learns _what_ is noise (in some _noisy image_) and _how_ to remove it, based into the _true signal_ / _original_ (image without noisy). The results are images very close to the true ones.
+## Material
 
-## Image denoising using autoencoders
+Here you can find:
+* An introduction on image denoising with examples of traditional filters
+* A Multi Layer Perceptron Autoencoder Denoiser
+* A Convolutional Neural Network Autoencoder Denoiser
+* Variational Autoencoder Denoiser
 
-**Autoencoders** are based on _Neural Networks (NNs)_ and are known as **Convolutional Neural Networks** (**CNNs** or **convnets**). A **convnet** is a __Deep Learning algorithm__ which takes an input image, assign importance (learnable weight, biases and retains spatial relationships in the data into each one of theirs layers) to various aspects/parts in the image and is able to differentiate/reconstruct the same.
+## References and supplementary material
 
-The **autoencoder** compreehends an _encoder_ and a _decoder_. The **encoder** does the _encoding process_, i.e., transforms the image into a _compressed representation_ at the same time that starts the noisy reduction. Then, the _compressed representation_ goes to **decoder** that performs the _decoder process_, restoring the image to its true and recognizable shape. At the end of the process, we remove almost all noise in the image.
+[1] FAN, L. et al. Brief review of image denoising techniques. Visual Computing for Industry, Biomedicine, and Art, v. 2, 2019.
+
+[2] Tian, C. et al. Deep Learning on Image Denoising: An overview. arXiv e-prints, p. arXiv:1912.13171, dez. 2019.
+
+[3] Chollet, F. [Building Autoencoders in Keras](https://blog.keras.io/building-autoencoders-in-keras.html)
+
+[4] de SANTI, N. S. M. Machine learning methods for extracting cosmological information. 2024. doi: [10.11606/T.43.2024.tde-15072024-101341](https://www.teses.usp.br/teses/disponiveis/43/43134/tde-15072024-101341/en.php).
 
 ## Contributing
 Pull requests are welcome!
